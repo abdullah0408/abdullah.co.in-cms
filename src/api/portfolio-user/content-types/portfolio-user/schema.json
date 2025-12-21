@@ -1,0 +1,105 @@
+{
+  "kind": "singleType",
+  "collectionName": "portfolio_users",
+  "info": {
+    "singularName": "portfolio-user",
+    "pluralName": "portfolio-users",
+    "displayName": "PORTFOLIO_USER"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "pronouns": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "string"
+    },
+    "flipSentences": {
+      "type": "component",
+      "component": "shared.flip-sentence",
+      "repeatable": true
+    },
+    "jobs": {
+      "type": "component",
+      "component": "shared.job",
+      "repeatable": true
+    },
+    "address": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "jobTitle": {
+      "type": "string"
+    },
+    "about": {
+      "type": "richtext"
+    },
+    "keywords": {
+      "type": "component",
+      "component": "shared.keyword",
+      "repeatable": true
+    },
+    "dateCreated": {
+      "type": "string"
+    },
+    "ogImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "namePronunciationUrl": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "timeZone": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

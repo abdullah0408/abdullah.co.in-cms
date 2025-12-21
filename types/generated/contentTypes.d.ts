@@ -430,6 +430,56 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPortfolioUserPortfolioUser extends Struct.SingleTypeSchema {
+  collectionName: 'portfolio_users';
+  info: {
+    displayName: 'PORTFOLIO_USER';
+    pluralName: 'portfolio-users';
+    singularName: 'portfolio-user';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    about: Schema.Attribute.RichText;
+    address: Schema.Attribute.String;
+    avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    bio: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    dateCreated: Schema.Attribute.String;
+    displayName: Schema.Attribute.String;
+    email: Schema.Attribute.String;
+    firstName: Schema.Attribute.String;
+    flipSentences: Schema.Attribute.Component<'shared.flip-sentence', true>;
+    gender: Schema.Attribute.String;
+    jobs: Schema.Attribute.Component<'shared.job', true>;
+    jobTitle: Schema.Attribute.String;
+    keywords: Schema.Attribute.Component<'shared.keyword', true>;
+    lastName: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::portfolio-user.portfolio-user'
+    > &
+      Schema.Attribute.Private;
+    namePronunciationUrl: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    ogImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    phoneNumber: Schema.Attribute.String;
+    pronouns: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    timeZone: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    username: Schema.Attribute.String;
+    website: Schema.Attribute.String;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -940,6 +990,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::portfolio-user.portfolio-user': ApiPortfolioUserPortfolioUser;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
