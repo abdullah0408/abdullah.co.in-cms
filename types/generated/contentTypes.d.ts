@@ -480,6 +480,35 @@ export interface ApiPortfolioUserPortfolioUser extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiUserSocialLinkUserSocialLink
+  extends Struct.SingleTypeSchema {
+  collectionName: 'user_social_links';
+  info: {
+    displayName: 'USER_SOCIAL_LINKS';
+    pluralName: 'user-social-links';
+    singularName: 'user-social-link';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::user-social-link.user-social-link'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    socialLinks: Schema.Attribute.Component<'shared.social-link', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -991,6 +1020,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::portfolio-user.portfolio-user': ApiPortfolioUserPortfolioUser;
+      'api::user-social-link.user-social-link': ApiUserSocialLinkUserSocialLink;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

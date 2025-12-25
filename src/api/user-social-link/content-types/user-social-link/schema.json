@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "user_social_links",
+  "info": {
+    "singularName": "user-social-link",
+    "pluralName": "user-social-links",
+    "displayName": "USER_SOCIAL_LINKS"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "socialLinks": {
+      "type": "component",
+      "component": "shared.social-link",
+      "repeatable": true
+    }
+  }
+}
