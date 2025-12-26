@@ -464,9 +464,7 @@ export interface ApiPortfolioUserPortfolioUser extends Struct.SingleTypeSchema {
       'api::portfolio-user.portfolio-user'
     > &
       Schema.Attribute.Private;
-    namePronunciationUrl: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
+    namePronunciationUrl: Schema.Attribute.Media<'audios'>;
     ogImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     phoneNumber: Schema.Attribute.String;
     pronouns: Schema.Attribute.String;

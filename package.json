@@ -38,5 +38,8 @@
   "strapi": {
     "uuid": "1af4e984-1b9b-4e53-bec9-d0dfa736b5bd",
     "installId": "b862c42cbdbd01ae0ad16d340ec30a8737e72e7c1ac0fa5f3ea71ee87e455aaf"
+  },
+  "patchedDependencies": {
+    "strapi-plugin-imagekit@1.0.2": "patches/strapi-plugin-imagekit@1.0.2.patch"
   }
 }

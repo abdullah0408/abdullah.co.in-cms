@@ -1,0 +1,12 @@
+diff --git a/dist/server/index.js b/dist/server/index.js
+index 2ff24a6763d8f8cad4e1d65cc6df18538c3baa20..45a4846e7ab3b6afc6044c0a5bf3d45ff728f5d2 100644
+--- a/dist/server/index.js
++++ b/dist/server/index.js
+@@ -14334,6 +14334,7 @@ function toImageKitUrl(src, settings2, client) {
+ }
+ function transformFormats(formats, url, settings2, client) {
+   const result = {};
++  if (!formats) return result;
+   for (const [name, fmt] of Object.entries(formats)) {
+     if (fmt && typeof fmt === "object" && typeof fmt.url === "string" && typeof fmt.width === "number" && typeof fmt.height === "number") {
+       const transformation = settings2.useTransformUrls ? [
